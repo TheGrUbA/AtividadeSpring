@@ -3,6 +3,7 @@ package com.beugenio.AtividadeSpring.domain;
 import java.util.Date;
 import javax.persistence.Entity;
 import com.beugenio.AtividadeSpring.domain.enums.EstadoPagamento;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class PagamentoComBoleto extends Pagamento {
@@ -16,12 +17,14 @@ public class PagamentoComBoleto extends Pagamento {
 		this.dataPagamento = dataPagamento;
 		this.dataVencimento = dataVencimento;
 	}
+	@JsonFormat(pattern="dd/MM/yyyy")
 	public Date getDataVencimento() {
 		return dataVencimento;
 	}
 	public void setDataVencimento(Date dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
+	@JsonFormat(pattern="dd/MM/yyyy")
 	public Date getDataPagamento() {
 		return dataPagamento;
 	}
